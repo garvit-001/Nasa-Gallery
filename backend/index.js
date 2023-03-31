@@ -12,8 +12,8 @@ app.use(cors());
 // const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 // const GOOGLE_CLIENT_ID =
-//   "158478109976-c6tpta17f68j71tcdesb2ad8ahucgkco.apps.googleusercontent.com";
-// const GOOGLE_CLIENT_SECRET = "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";
+//   process.env.GOOGLE_CLIENT_ID;
+// const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 // passport.use(
 //   new GoogleStrategy(
 //     {
@@ -43,8 +43,7 @@ app.use(cors());
 //   }
 // );
 
-const DB =
-  "mongodb+srv://Garvit_001:Garvit123@cluster0.igfkzba.mongodb.net/test";
+const DB = "process.env.mongoURI";
 mongoose
   .connect(DB)
   .then(console.log("database connected"))
